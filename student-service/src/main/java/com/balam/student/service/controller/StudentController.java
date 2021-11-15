@@ -32,7 +32,6 @@ public class StudentController {
 	@GetMapping("/stundetwithdepartment/{id}")
 	public StudentDepartmentResponse getStundetWithDepartment(@PathVariable("id") Long studentId) {
 		return studentService.getStundetWithDepartment(studentId);
-		
 	}
 
 }
