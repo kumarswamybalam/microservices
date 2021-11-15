@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.balam.student.service.entity.Student;
 import com.balam.student.service.service.StudentService;
+import com.balam.student.service.vo.StudentDepartmentResponse;
 
 @RestController
 @RequestMapping("/students")
@@ -26,6 +27,12 @@ public class StudentController {
 	@GetMapping("/{id}")
 	public Student findByStudentId(@PathVariable("id") Long studentId) {
 		return studentService.findByStudentId(studentId);
+	}
+	
+	@GetMapping("/stundetwithdepartment/{id}")
+	public StudentDepartmentResponse getStundetWithDepartment(@PathVariable("id") Long studentId) {
+		return studentService.getStundetWithDepartment(studentId);
+		
 	}
 
 }
